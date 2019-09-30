@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -79,7 +80,8 @@ public class Core {
      * @throws Exception
      */
     private List<String> addInfoToList(String[] arr,String limitMemory)throws Exception{
-        List<String> list=Arrays.asList(arr);
+        ArrayList<String> list=new ArrayList<>();
+        list.addAll(Arrays.asList(arr));
         String limit=null;
         if(limitMemory.contains("Gi")){
             limit=Integer.parseInt(limitMemory.replace("Gi",""))*1024+"";
@@ -87,7 +89,7 @@ public class Core {
             limit=limitMemory.replace("Mi","");
         }
         System.out.println(this.getTime()+" "+Thread.currentThread().getName()+" container limit is : "+limit);
-        boolean result= (limit==null) ? list.add(null) : list.add(limit+"Mi");
+        boolean result=(limit==null) ? list.add(null) : list.add(limit+"Mi");
         // 百分比
         if(list.get(3)!=null){
             int v = (int) ((new BigDecimal((float) Integer.parseInt(list.get(2).replace("Mi","")) / Integer.parseInt(limit)).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue())*100);
@@ -145,6 +147,15 @@ public class Core {
             return false;
         }
         return true;
+    }
+
+    public static void main(String[] args) {
+        String[] arr={"1","2"};
+        List lis=Arrays.asList(arr);
+        ArrayList arrayList=new ArrayList();
+        arrayList.addAll(lis);
+        arrayList.add(null);
+        System.out.println(arrayList);
     }
 
 }
