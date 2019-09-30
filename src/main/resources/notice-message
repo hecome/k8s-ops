@@ -1,0 +1,12 @@
+{
+    "msgtype": "text",
+    "text": {
+        "content": "%s "
+    },
+    "at": {
+        "atMobiles": [
+            "15755356390"
+        ],
+        "isAtAll": false
+    }
+}
