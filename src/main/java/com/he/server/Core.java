@@ -149,13 +149,5 @@ public class Core {
         return true;
     }
 
-    public static void main(String[] args) {
-        String[] arr={"1","2"};
-        List lis=Arrays.asList(arr);
-        ArrayList arrayList=new ArrayList();
-        arrayList.addAll(lis);
-        arrayList.add(null);
-        System.out.println(arrayList);
-    }
 
 }
