@@ -20,7 +20,7 @@ public class Core {
     private static final String single="kubectl get pod %s -n ingress-nginx -o=jsonpath='{.spec.containers[*].resources.limits.memory}'";
     private static final int warningRate=75;
 
-    /**
+    /**  1
      * 获取pods
      * @throws Exception
      */
