@@ -9,7 +9,7 @@ public class Start {
             while (true){
                 Core app=new Core();
                 app.listContainers();
-                Thread.sleep(1000L*60*30);
+                Thread.sleep(1000L*60*10);
             }
         }catch (Exception e){
             e.printStackTrace();
